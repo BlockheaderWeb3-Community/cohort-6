@@ -1,5 +1,8 @@
 <!-- Thank you for your interest in contributing to BlockHeaderWeb3! -->
 
+Assignment 1 link [here](https://github.com/BlockheaderWeb3-Community/cohort-6/blob/main/assignments/Assignment1.md)
+
+Assignment 2 link [here](https://github.com/BlockheaderWeb3-Community/cohort-6/blob/main/assignments/Assignment2.md)
 
 <!-- Describe the changes introduced in this pull request. -->
 <!-- Include any context necessary for understanding the PR's purpose. -->
@@ -12,4 +15,3 @@
 
 - [ ] Tests
 - [ ] Documentation
-
