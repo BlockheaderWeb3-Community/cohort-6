@@ -64,7 +64,7 @@ contract Counter {
     /// @return The maximum value of uint256.
     function getMaxUint256() public pure returns (uint) {
         unchecked {
-            return uint256(-1);
+            return uint256(0) - 1;
         }
     }
 }
