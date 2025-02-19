@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.14;
 
 /// @title Payable Contract
 /// @notice This contract allows users to deposit ETH and keeps track of investments

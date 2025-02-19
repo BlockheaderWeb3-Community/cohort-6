@@ -1,0 +1,521 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/ControlFlow.yourname.sol": {
+      "lastModificationDate": 1739469713801,
+      "contentHash": "32efbbf32ee183b94d9f1a6607477a0a",
+      "sourceName": "contracts/ControlFlow.yourname.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ControlFlow"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/Counter.sol": {
+      "lastModificationDate": 1739448426833,
+      "contentHash": "6d1e3d6046e91ecd4ec7d32feee85e00",
+      "sourceName": "contracts/Counter.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Counter"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1739448633078,
+      "contentHash": "681c532e816169606d13a5fe8b475074",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/ERC20.sol": {
+      "lastModificationDate": 1739593978645,
+      "contentHash": "5d8659e226123b25d2885c33c48ae048",
+      "sourceName": "contracts/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/IERC20.sol": {
+      "lastModificationDate": 1739593978645,
+      "contentHash": "2786534e112648c0241b8b56fc7ae8da",
+      "sourceName": "contracts/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/ERC721.sol": {
+      "lastModificationDate": 1739593978645,
+      "contentHash": "8d07197cb0e86809074feb4fe4f9e66b",
+      "sourceName": "contracts/ERC721.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ERC721",
+        "IBSNFT"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/IERC721.sol": {
+      "lastModificationDate": 1739593978645,
+      "contentHash": "e5785b08ba03983928e59511bb20be2b",
+      "sourceName": "contracts/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/Inheritance.sol": {
+      "lastModificationDate": 1739448426833,
+      "contentHash": "fc162b780b43a7681a05853e64192e2b",
+      "sourceName": "contracts/Inheritance.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/Payable.sol": {
+      "lastModificationDate": 1739597535873,
+      "contentHash": "e05867eedcc06306405108eeb749db8a",
+      "sourceName": "contracts/Payable.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.14"
+      ],
+      "artifacts": [
+        "Funder",
+        "Payable"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/Primitives.sol": {
+      "lastModificationDate": 1739448426833,
+      "contentHash": "40c23c348eae6564bebf04eccd8d7293",
+      "sourceName": "contracts/Primitives.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PrimitiveDataTypes"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/task-1/counter_Olowo.sol": {
+      "lastModificationDate": 1739963434281,
+      "contentHash": "91365d509edbcfee5d3976e1afad6013",
+      "sourceName": "contracts/task-1/counter_Olowo.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.14"
+      ],
+      "artifacts": [
+        "Counter"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/task-2/studentRegistry_Olowo.sol": {
+      "lastModificationDate": 1739963473457,
+      "contentHash": "02b414ba20dd3e5d0c5eeec40faa777a",
+      "sourceName": "contracts/task-2/studentRegistry_Olowo.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.14"
+      ],
+      "artifacts": [
+        "Students"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/task-3/Crowdfunding.sol": {
+      "lastModificationDate": 1739963567056,
+      "contentHash": "c292d1d974edda5fd56e13503486bd44",
+      "sourceName": "contracts/task-3/Crowdfunding.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "Crowdfunding",
+        "IERC20"
+      ]
+    },
+    "/home/olowo/Desktop/solidity/blockheader/cohort-6/contracts/task-3/Erc20.sol": {
+      "lastModificationDate": 1739963604682,
+      "contentHash": "19479df9aec53bf6a4c921fbabf69904",
+      "sourceName": "contracts/task-3/Erc20.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    }
+  }
+}
