@@ -16,9 +16,9 @@ contract CrowdFunding{
 
     mapping (address => uint256) public contributions;
 
-    event Funded(address contributor, uint256 amount);
+    event Funded(address contributor, uint256 amount);       
     event GoalReached(uint256 totalRaised);
-    event Withdrawal(uint256 amount);
+    event Withdrawal(address owner, uint256 amount);
 
 
     constructor(address _tokenAddress, address _nftAddress, uint256 _fundingGoal, uint256 _nftThreshold) {
@@ -53,18 +53,21 @@ contract CrowdFunding{
         if (msg.value >= nftThreshold){
             crowdNFT.mint(msg.sender);
         }
+        emit Funded (msg.sender, msg.value);
 
         //check if funding goal is reached
         if (totalFunds >= fundingGoal && !goalReached){
             goalReached = true;
         }
+        emit GoalReached(address(this).balance);
+
     }
 
     //withdraw funds if the goal is met
     function WithdrawFunds() external onlyOwner{
         require(goalReached, "Funding goal not reached");
-        uint256 balance = address(this).balance;
-        payable(owner).transfer(balance);
-
+        (bool success,) = owner.call{value: address(this).balance}("");
+        require(success, "Withdrawal failed");
+        emit Withdrawal(owner, address(this).balance);
     }
 }
