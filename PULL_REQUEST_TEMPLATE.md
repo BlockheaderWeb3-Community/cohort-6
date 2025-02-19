@@ -12,4 +12,5 @@
 
 - [ ] Tests
 - [ ] Documentation
+- [X] Hardhat Integration
 
