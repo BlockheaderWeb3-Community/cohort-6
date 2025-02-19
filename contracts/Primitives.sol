@@ -14,7 +14,7 @@ contract PrimitiveDataTypes {
     bool public myBool = true;
 
     /// @notice Address example.
-    address public myAddress = 0x5a0b54d5dc17ecc72cb732b0401d82356583905b; // Example address
+    address public myAddress = 0xFABB0ac9d68B0B445fB7357272Ff202C5651694a; // Example address
 
     /// @notice Bytes example (fixed-size byte array).
     bytes32 public myBytes = "Hello, world!";
