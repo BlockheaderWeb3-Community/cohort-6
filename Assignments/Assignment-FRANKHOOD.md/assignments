@@ -1,0 +1,13 @@
+# Assignment 1
+
+Here's a link to [Assignment 1](../Assignment-1.md/counter..FRANKHOOD.sol)
+
+The Assignment creates a simple Counter contract that increases by one, by value and decreases by one, by value
+
+# Assignment 2
+
+Here's the link to [Assignment 2](../Assignment-FRANKHOOD.md/counter..FRANKHOOD.sol)
+
+This Student Registry contract registers students taking into account their name, attendance and interests
+the contracts allows students to remove interests, add interests, and update their name
+it successfully compiled in hardhat
