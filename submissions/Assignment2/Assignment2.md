@@ -1,5 +1,5 @@
 # Assignment2
-here's link to [assignment 2](../contracts/Assignment2/studentRegistry.Uka.sol)
+here's link to [assignment 2](../../contracts/Assignment2/studentRegistry.Uka.sol)
 
 # Student Registry Smart Contract
 

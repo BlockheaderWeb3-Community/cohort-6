@@ -1,5 +1,5 @@
 # Assignment1
-here's link to [assignment 1](../contracts/Assignment1/counter.Uka.sol)
+here's link to [assignment 1](../../contracts/Assignment1/counter.Uka.sol)
 
 # Counter Smart Contract
 
