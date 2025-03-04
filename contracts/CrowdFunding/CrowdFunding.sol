@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "./crowdToken.sol";
-import "./crowdNFT.sol";
+import "./CrowdToken.sol";
+import "./CrowdNFT.sol";
 
 contract Crowdfunding {
     address public owner;
