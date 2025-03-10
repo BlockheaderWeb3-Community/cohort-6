@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 import "forge-std/Test.sol";
-import "../contracts/Payable.sol"; // Adjust this path to where your contracts are stored
+import "../contracts/Payable.sol"; 
 
 contract ContractsTest is Test {
     // Contracts to test
