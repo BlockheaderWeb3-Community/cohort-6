@@ -465,6 +465,9 @@ contract CrowdfundingTest is Test {
         require(success, "revert transfer");
 
         assertEq(crowdfunding.getContribution(addr2), 2 ether);
+
+        //Assert that other addresses do not receive the ether
+        assertEq(crowdfunding.getContribution(addr3), 0 ether);
     }
 
     function test_fallback() external {
@@ -473,5 +476,8 @@ contract CrowdfundingTest is Test {
         require(success, "revert transfer");
 
         assertEq(crowdfunding.getContribution(addr2), 2 ether);
+        
+        //Assert that other addresses do not receive the ether
+        assertEq(crowdfunding.getContribution(addr3), 0 ether);
     }
 }
