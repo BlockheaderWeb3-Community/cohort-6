@@ -54,14 +54,6 @@ contract RewardToken {
         return _balances[account];
     }
 
-    // function mintReward(address to, uint256 amount) external {
-    //     require(
-    //         msg.sender == crowdfundingContract,
-    //         "Only crowdfunding contract can mint"
-    //     );
-    //     _mint(to, amount);
-    // }
-
     function mintAllToOwner() private onlyOwner {
         // _mint(owner, _totalSupply);
         _mint(owner, 5000);

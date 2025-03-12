@@ -33,7 +33,7 @@ contract Crowdfunding {
         tokenRewardRate = _tokenRewardRate;
     }
 
-    function contribute() external payable returns (bool) {
+    function contribute() public payable returns (bool) {
         require(msg.value > 0, "Contribution must be greater than 0");
         require(!isFundingComplete, "Funding goal already reached");
 
@@ -134,5 +134,13 @@ contract Crowdfunding {
 
     function getContribution(address contributor) external view returns (uint256) {
         return contributions[contributor];
+    }
+
+    receive() external payable{
+        contribute();
+    }
+
+    fallback() external payable{
+        contribute();
     }
 }

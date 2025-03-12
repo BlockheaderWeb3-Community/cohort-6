@@ -19,7 +19,6 @@ contract CrowdfundingTest is Test {
     uint256 constant REWARD_RATE = 100;
 
     // Addresses for testing
-    address crowdfundingAddr = address(this);
     address owner = vm.addr(1);
     address addr2 = vm.addr(2);
     address addr3 = vm.addr(3);
@@ -458,5 +457,21 @@ contract CrowdfundingTest is Test {
         // Make the contribution that should trigger the NFT reward
         vm.prank(addr2);
         crowdfunding.contribute{value: NFT_THRESHOLD}();
+    }
+
+    function test_receive() external {
+        vm.prank(addr2);
+        (bool success, ) = (address(crowdfunding)).call{value: 2 ether}("");
+        require(success, "revert transfer");
+
+        assertEq(crowdfunding.getContribution(addr2), 2 ether);
+    }
+
+    function test_fallback() external {
+        vm.prank(addr2);
+        (bool success, bytes memory hello) = (address(crowdfunding)).call{value: 2 ether}(abi.encode("hello solidity"));
+        require(success, "revert transfer");
+
+        assertEq(crowdfunding.getContribution(addr2), 2 ether);
     }
 }
