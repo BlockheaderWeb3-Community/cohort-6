@@ -7,7 +7,7 @@ import "./RewardNft.sol";
 
 contract Crowdfunding {
     address public Owner;
-    uint public constant FUNDING_GOAL_IN_USD = 50 ether;
+    uint public constant FUNDING_GOAL = 50 ether;
     uint public constant NFT_THRESHOLD = 5 ether;
     uint256 public totalFundsRaised;
     bool public isFundingComplete;
@@ -34,66 +34,54 @@ contract Crowdfunding {
     }
 
     function contribute() external payable returns (bool) {
-        // console.log("Ether Value contribution___%s", msg.value);
         require(msg.value > 0, "Contribution must be greater than 0");
         require(!isFundingComplete, "Funding goal already reached");
 
         // Calculate contribution amount and process any refunds
 
         uint256 refundableAmount = _determineIfAmountIsRefundable(msg.value);
+        uint256 actualContribution = msg.value - refundableAmount;
 
         // check if refundable amount is > 0
         if (refundableAmount > 0) {
             transferRefundableAmount(refundableAmount, msg.sender);
         }
 
-        // console.log("contributed Amount____%s", refundableAmount);
         // Update contribution record
-        uint256 contributionsValue = msg.value - refundableAmount;
-        contributions[msg.sender] += contributionsValue;
-        console.log("E work ooooo______", contributions[msg.sender]);
-        totalFundsRaised += contributionsValue;
-        console.log("total funds raised____%s", totalFundsRaised);
+        // uint256 contributionsValue = msg.value - refundableAmount;
+        contributions[msg.sender] += actualContribution;
+        totalFundsRaised += actualContribution;
 
         // Check if funding goal is reached
-        if (totalFundsRaised >= FUNDING_GOAL_IN_USD) {
+        if (totalFundsRaised >= FUNDING_GOAL) {
             isFundingComplete = true;
         }
 
         // Calculate token reward
-        uint256 tokenReward = calculateReward(msg.value);
-
-        // console.log("token reward____%s", tokenReward);
+        uint256 tokenReward = calculateReward(actualContribution);
 
         if (tokenReward > 0) {
-            // console.log("the contract caller____%s", msg.sender);
             bool isTransfered = sendRewardToken(tokenReward, msg.sender);
             require(isTransfered, "Token transfer failed");
-            // console.log("token reward____%s", tokenReward);
 
             // Check for NFT eligibility
-            bool isNftTransfered = mintNft(msg.sender);
-            require(isNftTransfered, "NFT transfer failed");
+            if (checkNftEligibility(msg.sender)) {
+                mintNft(msg.sender);
+            }
 
-            emit ContributionReceived(msg.sender, msg.value);
+            emit ContributionReceived(msg.sender, actualContribution);
+            return true;
         } else {
             return false;
         }
     }
 
-    function checkNftEligibilty(address _address) private returns (bool) {
-        console.log("contributor Amount______:", contributions[_address]);
-        console.log("nft threshold___", NFT_THRESHOLD);
-        console.log("Has receivedNft___", !hasReceivedNFT[_address]);
-
-        if (contributions[_address] >= NFT_THRESHOLD && !hasReceivedNFT[_address]) {
-            return true;
-        }
-        return false;
+    function checkNftEligibility(address _address) private view returns (bool) {
+        return contributions[_address] >= NFT_THRESHOLD && !hasReceivedNFT[_address];
     }
 
     function mintNft(address _contributor) private returns (bool) {
-        require(checkNftEligibilty(_contributor), "Not eligible for NFT reward");
+        // require(checkNftEligibilty(_contributor), "Not eligible for NFT reward");
         uint256 tokenId = rewardNFT.mintNFT(_contributor);
         hasReceivedNFT[_contributor] = true;
         emit NFTRewardSent(_contributor, tokenId);
@@ -102,37 +90,31 @@ contract Crowdfunding {
 
     function calculateReward(uint256 _value) private view returns (uint256) {
         uint256 tokenReward = (_value * tokenRewardRate) / 1 ether;
-
         return tokenReward;
     }
 
-    function sendRewardToken(uint256 _amount, address _recipient) private returns (bool) {
-        uint256 rewardAmount = calculateReward(_amount);
-        rewardToken.transferFrom(address(this), _recipient, rewardAmount);
-        emit TokenRewardSent(msg.sender, rewardAmount);
+    function sendRewardToken(uint256 _tokenReward, address _recipient) private returns (bool) {
+        bool success = rewardToken.transfer(_recipient, _tokenReward);
+        require(success, "Token transfer failed");
+        emit TokenRewardSent(msg.sender, _tokenReward);
 
         return true;
     }
 
-    function _determineIfAmountIsRefundable(uint256 _contributionAmount) private returns (uint256) {
+    function _determineIfAmountIsRefundable(uint256 _contributionAmount) private view returns (uint256) {
         // Calculate the remaining amount needed to complete the funding goal
-        // return refundableAmount;
-        // console.log("contribution Amount____%s", _contributionAmount);
-        uint256 amountToReachThreshold = FUNDING_GOAL_IN_USD - totalFundsRaised;
-        // console.log("amount to reach threshold____%s", amountToReachThreshold);
-        // console.log("funding goal____%s", FUNDING_GOAL_IN_USD);
+        uint256 amountToReachThreshold = FUNDING_GOAL - totalFundsRaised;
         if (_contributionAmount >= amountToReachThreshold) {
             // return the excess amount
             uint256 refundAmount = _contributionAmount - amountToReachThreshold;
-            // console.log("refundable amount____%s", refundAmount);
             return refundAmount;
         }
-        // return 0;
-        return _contributionAmount;
+        return 0;
     }
 
     function transferRefundableAmount(uint256 _amount, address _contributor) private {
-        uint256 refundable = _determineIfAmountIsRefundable(_amount);
+        // uint256 refundable = _determineIfAmountIsRefundable(_amount);
+        uint256 refundable = _amount;
         if (refundable > 0) {
             (bool success, ) = _contributor.call{value: refundable}("");
             require(success, "Transfer failed");
