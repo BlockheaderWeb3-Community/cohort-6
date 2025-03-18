@@ -1,66 +1,60 @@
-## Foundry
+# Upgradable Contracts - Diamond Standard
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Foundry + Hardhat Diamonds
 
-Foundry consists of:
+This is a mimimal template for [Diamonds](https://github.com/ethereum/EIPs/issues/2535) which allows facet selectors to be generated on the go in solidity tests!
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Installation
 
-## Documentation
+- Clone this repo
+- Install dependencies
 
-https://book.getfoundry.sh/
+```bash
+$ yarn && forge update
+```
 
-## Usage
+### Compile
 
-### Build
+### Foundry
 
-```shell
+```bash
 $ forge build
 ```
 
-### Test
+### If you encounter Source "forge-std/Test.sol" not found: File not found.
 
-```shell
-$ forge test
+```bash
+forge install foundry-rs/forge-std
 ```
 
-### Format
+Then run
 
-```shell
-$ forge fmt
+```bash
+$ forge build
 ```
 
-### Gas Snapshots
+### Hardhat
 
-```shell
-$ forge snapshot
+```bash
+$ npx hardhat compile
 ```
 
-### Anvil
+## Deployment
 
-```shell
-$ anvil
+### Hardhat
+
+```bash
+$ npx hardhat run scripts/deploy.js
 ```
 
-### Deploy
+### Foundry
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```bash
+$ forge t
 ```
 
-### Cast
+`Note`: A lot of improvements are still needed so contributions are welcome!!
 
-```shell
-$ cast <subcommand>
-```
+Bonus: The [DiamondLoupefacet](contracts/facets/DiamondLoupeFacet.sol) uses an updated [LibDiamond](contracts/libraries//LibDiamond.sol) which utilises solidity custom errors to make debugging easier especially when upgrading diamonds. Take it for a spin!!
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Need some more clarity? message me [on twitter](https://twitter.com/Timidan_x), Or join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2)

@@ -6,7 +6,8 @@
     "hardhat": "^2.22.18"
   },
   "dependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^2.0.7"
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
+    "ethers": "5.7.2"
   },
   "scripts": {
     "format": "prettier --write \"test/**/*.js\"",
